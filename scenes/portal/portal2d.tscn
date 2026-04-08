@@ -1,0 +1,5 @@
+[gd_scene format=3 uid="uid://cd0irom4vl71w"]
+
+[node name="Portal2d" type="Node2D" unique_id=1418799540]
+
+[node name="SpawnPoint" type="Marker2D" parent="." unique_id=758426387]

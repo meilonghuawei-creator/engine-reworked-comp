@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://h2uyvkwl4w4y"
+path="res://.godot/imported/Wake Up.WAV-c70aac822a59adb8661cc2fc7cff2834.sample"
+
+[deps]
+
+source_file="res://sfx/legacy pack/Wake Up.WAV"
+dest_files=["res://.godot/imported/Wake Up.WAV-c70aac822a59adb8661cc2fc7cff2834.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

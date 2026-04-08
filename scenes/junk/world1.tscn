@@ -1,0 +1,172 @@
+[gd_scene format=3 uid="uid://rww5uww6n0q3"]
+
+[ext_resource type="Script" uid="uid://b8ef6vdo13c80" path="res://scenes/junk/world1.gd" id="1_mprvf"]
+[ext_resource type="PackedScene" uid="uid://c5om68hbtuyu" path="res://materials/placeholder models/bedroommodeltest.tscn" id="2_cao4m"]
+[ext_resource type="MeshLibrary" uid="uid://csg4glt3j6tid" path="res://materials/gridmapA/tiletest1.tres" id="2_ojxqu"]
+[ext_resource type="AudioStream" uid="uid://ce78aoi5s2u4o" path="res://music/legacy import/yume/Piano girl room (Tricolor room picture Book )- yume 2kki.ogg" id="2_t1cw4"]
+[ext_resource type="PackedScene" uid="uid://b5qj8cupfltw0" path="res://scenes/portal/portal3d.tscn" id="3_ojxqu"]
+[ext_resource type="Texture2D" uid="uid://cdmsbvvs7407e" path="res://materials/placeholder sprites/gerth1.png" id="5_yii3h"]
+[ext_resource type="Texture2D" uid="uid://c58jqt2nl8inw" path="res://materials/placeholder sprites/gerth3.png" id="6_3ccro"]
+[ext_resource type="Texture2D" uid="uid://bc58q6smd6ly8" path="res://materials/placeholder sprites/gerth4.png" id="6_3ieqj"]
+[ext_resource type="Texture2D" uid="uid://bpvq0mdwb3l5h" path="res://materials/placeholder sprites/gerth2.png" id="6_d6v3k"]
+[ext_resource type="Texture2D" uid="uid://b7kvmxmpvl3xc" path="res://materials/placeholder sprites/ufo.png" id="9_g4bba"]
+[ext_resource type="Script" uid="uid://cx76pw3sislu4" path="res://scenes/junk/ufpsprite.gd" id="10_u62wn"]
+[ext_resource type="Texture2D" uid="uid://b2ab4vh8wajre" path="res://materials/placeholder sprites/plane.png" id="11_t1cw4"]
+[ext_resource type="Script" uid="uid://cgdwwlkfidkv0" path="res://scenes/junk/hikochan.gd" id="12_bhplf"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_n8l6g"]
+sky_top_color = Color(0.043900453, 0.39182547, 0.52430767, 1)
+sky_horizon_color = Color(0.48905298, 0.63975286, 0.67526984, 1)
+ground_bottom_color = Color(0.034574952, 0.28944972, 0.2990351, 1)
+ground_horizon_color = Color(0.48905298, 0.63975286, 0.67526984, 1)
+
+[sub_resource type="Sky" id="Sky_mprvf"]
+sky_material = SubResource("ProceduralSkyMaterial_n8l6g")
+
+[sub_resource type="Environment" id="Environment_ojxqu"]
+background_mode = 2
+sky = SubResource("Sky_mprvf")
+tonemap_mode = 2
+ssao_enabled = true
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_2i7rf"]
+size = Vector3(19.334625, 0.3413086, 21.142822)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_g4bba"]
+blend_mode = 1
+albedo_color = Color(0.95649594, 0.00023718835, 0.28537723, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_cao4m"]
+
+[node name="world1" type="Node3D" unique_id=205824137]
+script = ExtResource("1_mprvf")
+level_id = 1
+level_theme = ExtResource("2_t1cw4")
+
+[node name="Bedroommodeltest" parent="." unique_id=978244822 instance=ExtResource("2_cao4m")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -1, -0.30815542, -8.512092)
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=96689756]
+transform = Transform3D(-0.8660254, -0.43301278, 0.25, 0, 0.49999997, 0.86602545, -0.50000006, 0.75, -0.43301266, 0, 0, 0)
+light_color = Color(0.5834993, 0.43610507, 0.5823057, 1)
+light_energy = 2.2
+shadow_enabled = true
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1043687701]
+environment = SubResource("Environment_ojxqu")
+
+[node name="players" type="Node3D" parent="." unique_id=1566554590]
+
+[node name="mobs" type="Node3D" parent="." unique_id=1311690463]
+
+[node name="items" type="Node3D" parent="." unique_id=1624795446]
+
+[node name="furnitures" type="Node3D" parent="." unique_id=1047784610]
+
+[node name="GridMap" type="GridMap" parent="." unique_id=1700459382]
+mesh_library = ExtResource("2_ojxqu")
+
+[node name="stage" type="Node3D" parent="." unique_id=350872619]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="stage" unique_id=926217040]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="stage/StaticBody3D" unique_id=435361638]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.7812653, -0.3293457, -5.0025635)
+shape = SubResource("BoxShape3D_2i7rf")
+
+[node name="CSGBox3D" type="CSGBox3D" parent="stage/StaticBody3D" unique_id=1542745752]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.88385, -0.40454102, -4.9290314)
+visible = false
+size = Vector3(19.181519, 0.19091797, 20.968231)
+
+[node name="Node3D" type="Node3D" parent="stage" unique_id=613950501]
+
+[node name="Sprite3D" type="Sprite3D" parent="stage/Node3D" unique_id=1432141434]
+transform = Transform3D(1.3113416e-07, 0, 1, 0, 1, 0, -1, 0, 1.3113416e-07, -15.406946, 0.900558, -10.3217945)
+texture = ExtResource("5_yii3h")
+
+[node name="Sprite3D4" type="Sprite3D" parent="stage/Node3D" unique_id=1204011575]
+transform = Transform3D(-0.7864285, 0, 0.6176812, 0, 1, 0, -0.6176812, 0, -0.7864285, -14.388548, -1.4916105, 24.67854)
+pixel_size = 0.03
+shaded = true
+alpha_cut = 2
+texture = ExtResource("6_3ieqj")
+
+[node name="Sprite3D3" type="Sprite3D" parent="stage/Node3D" unique_id=174101343]
+transform = Transform3D(0.9534174, 0, 0.3016543, 0, 1, 0, -0.3016543, 0, 0.9534174, -28.538479, -2.986132, -42.55544)
+pixel_size = 0.03
+shaded = true
+alpha_cut = 2
+texture = ExtResource("6_3ccro")
+
+[node name="Sprite3D2" type="Sprite3D" parent="stage/Node3D" unique_id=1035567420]
+transform = Transform3D(-5.732056e-15, -1, -4.371139e-08, 1.3113416e-07, -4.371139e-08, 1, -1, 0, 1.3113416e-07, -31.409918, -3.6644626, -22.886366)
+pixel_size = 0.05
+alpha_cut = 2
+texture = ExtResource("6_d6v3k")
+
+[node name="ufo" type="Sprite3D" parent="stage/Node3D" unique_id=112362071]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -26.01036, 30.96832, -21.997042)
+billboard = 2
+texture = ExtResource("9_g4bba")
+script = ExtResource("10_u62wn")
+orbit_radius = 25.0
+orbit_speed = 0.5
+hover_amplitude = 1.2
+
+[node name="hiko" type="Sprite3D" parent="stage/Node3D" unique_id=1979188721]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -82.332, 79.123405, -9.506165)
+flip_h = true
+texture = ExtResource("11_t1cw4")
+script = ExtResource("12_bhplf")
+patrol_distance = 300.0
+speed = 34.0
+hover_amplitude = 0.0
+
+[node name="glass" type="CSGBox3D" parent="stage" unique_id=1779703407]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.476208, 1.5983582, -10.297952)
+material_override = SubResource("StandardMaterial3D_g4bba")
+use_collision = true
+size = Vector3(1, 4.1967163, 4.4108887)
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="stage" unique_id=1423121951]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.0789003, 4.5886536, -8.421048)
+material_override = SubResource("StandardMaterial3D_cao4m")
+use_collision = true
+size = Vector3(0.17962646, 10.177307, 10.222168)
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="stage" unique_id=1458332761]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.90378857, 4.5886536, -3.5207796)
+material_override = SubResource("StandardMaterial3D_cao4m")
+use_collision = true
+size = Vector3(10.145004, 10.177307, 0.42163086)
+
+[node name="CSGBox3D4" type="CSGBox3D" parent="stage" unique_id=1801690945]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.90378857, 7.10466, -8.323834)
+material_override = SubResource("StandardMaterial3D_cao4m")
+use_collision = true
+size = Vector3(10.145004, 5.145294, 10.792938)
+
+[node name="light" type="DirectionalLight3D" parent="stage" unique_id=164011748]
+transform = Transform3D(-0.55058163, 0.61671865, -0.56259924, 0.011053445, 0.6792748, 0.7338007, 0.8347081, 0.39779857, -0.38081315, -12.111028, 8.967023, -10.353612)
+light_color = Color(0.9999997, 0.19732475, 0.35068846, 1)
+shadow_enabled = true
+sky_mode = 1
+
+[node name="spawners" type="Node" parent="." unique_id=1272025895]
+
+[node name="player_spawner" type="MultiplayerSpawner" parent="spawners" unique_id=285966530]
+_spawnable_scenes = PackedStringArray("uid://b1wdiyymjwak2")
+spawn_path = NodePath("../../players")
+
+[node name="mob_spawner" type="MultiplayerSpawner" parent="spawners" unique_id=1225462160]
+spawn_path = NodePath("../../mobs")
+
+[node name="furniture_spawner" type="MultiplayerSpawner" parent="spawners" unique_id=646716105]
+spawn_path = NodePath("../../furnitures")
+
+[node name="Portal]" parent="." unique_id=707555669 instance=ExtResource("3_ojxqu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.1692626, 1.4732851, -13.341874)
+visible = false
+to_world = "res://scenes/junk/world0.tscn"
+to_portal = "Portal3d"

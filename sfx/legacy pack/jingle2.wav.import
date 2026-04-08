@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://0gt68gv5qm42"
+path="res://.godot/imported/jingle2.wav-e5b836dd8d20061667aa86c7a6587e08.sample"
+
+[deps]
+
+source_file="res://sfx/legacy pack/jingle2.wav"
+dest_files=["res://.godot/imported/jingle2.wav-e5b836dd8d20061667aa86c7a6587e08.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

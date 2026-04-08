@@ -1,0 +1,7 @@
+[gd_scene format=3 uid="uid://bnraxqnb05t6g"]
+
+[ext_resource type="Script" uid="uid://dal6iv4rr61qe" path="res://scenes/menu/autoloader.gd" id="1_2vasq"]
+
+[node name="Autoloader" type="Node" unique_id=1957473825]
+script = ExtResource("1_2vasq")
+sfx_paths = Array[String](["res://sfx/legacy pack/Aue.WAV", "res://sfx/legacy pack/Vi.WAV"])

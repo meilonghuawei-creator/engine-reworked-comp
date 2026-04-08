@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://cprs0umwsr534"
+path="res://.godot/imported/Yume 2kki OST - Cocktail Lounge [Extended].ogg-63d51bef4914370073ddb860e4de2197.oggvorbisstr"
+
+[deps]
+
+source_file="res://music/legacy import/yume/Yume 2kki OST - Cocktail Lounge [Extended].ogg"
+dest_files=["res://.godot/imported/Yume 2kki OST - Cocktail Lounge [Extended].ogg-63d51bef4914370073ddb860e4de2197.oggvorbisstr"]
+
+[params]
+
+loop=true
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

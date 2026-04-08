@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://hn6jpwa1wdxj"
+path="res://.godot/imported/Aue.WAV-47b6af5f2ceb525fc3c6d61deadea087.sample"
+
+[deps]
+
+source_file="res://sfx/legacy pack/Aue.WAV"
+dest_files=["res://.godot/imported/Aue.WAV-47b6af5f2ceb525fc3c6d61deadea087.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

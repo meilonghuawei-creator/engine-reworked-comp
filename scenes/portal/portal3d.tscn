@@ -1,0 +1,33 @@
+[gd_scene format=3 uid="uid://b5qj8cupfltw0"]
+
+[ext_resource type="Script" uid="uid://bqyke4a1k80xw" path="res://scenes/portal/portal.gd" id="1_0qhj5"]
+[ext_resource type="Texture2D" uid="uid://b0q3mljsvj3ku" path="res://materials/placeholder sprites/black door.png" id="2_vvaqx"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_vvaqx"]
+size = Vector3(1.6849899, 2.9980469, 0.48199463)
+
+[node name="Portal3d" type="Node3D" unique_id=707555669]
+script = ExtResource("1_0qhj5")
+
+[node name="Area3D" type="Area3D" parent="." unique_id=1897316607]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D" unique_id=1927813312]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.021442413, 0.0009765625, 0.2590027)
+shape = SubResource("BoxShape3D_vvaqx")
+
+[node name="Sprite3D" type="Sprite3D" parent="." unique_id=1522946747]
+pixel_size = 0.00135
+alpha_cut = 2
+texture = ExtResource("2_vvaqx")
+
+[node name="CSGBox3D" type="CSGBox3D" parent="." unique_id=979659244]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.023498535, -0.043029785, 0.00024414063)
+visible = false
+use_collision = true
+size = Vector3(1.6717529, 3.3426514, 0.11279297)
+
+[node name="SpawnPoint" type="Marker3D" parent="." unique_id=1895293300]
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 0, -1.120803, 0.3164971)
+
+[connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]
+[connection signal="body_exited" from="Area3D" to="." method="_on_area_3d_body_exited"]

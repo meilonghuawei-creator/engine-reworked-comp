@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://cx7y6pw1mpmcf"
+path="res://.godot/imported/Yume 2kki OST - Sorrow and Comfort Monuments (Extended).ogg-64fcda7c0a486386692bf5d62128d6a3.oggvorbisstr"
+
+[deps]
+
+source_file="res://music/legacy import/yume/Yume 2kki OST - Sorrow and Comfort Monuments (Extended).ogg"
+dest_files=["res://.godot/imported/Yume 2kki OST - Sorrow and Comfort Monuments (Extended).ogg-64fcda7c0a486386692bf5d62128d6a3.oggvorbisstr"]
+
+[params]
+
+loop=true
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

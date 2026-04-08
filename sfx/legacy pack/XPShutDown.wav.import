@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://bjdoyj7l4np77"
+path="res://.godot/imported/XPShutDown.wav-78d72e4ad9c2e13d749d5c6ad07191a4.sample"
+
+[deps]
+
+source_file="res://sfx/legacy pack/XPShutDown.wav"
+dest_files=["res://.godot/imported/XPShutDown.wav-78d72e4ad9c2e13d749d5c6ad07191a4.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

@@ -1,0 +1,7 @@
+res://scenes/player/player_3d.tscn
+res://materials/gridmapA/tiletest1.tres
+res://shaders/crtkinomotoyui.gdshader
+res://shaders/vhsrevybes.gdshader
+res://shaders/snowlumine.gdshader
+res://scenes/player/player_3d.gd
+res://scenes/junk/world1.tscn

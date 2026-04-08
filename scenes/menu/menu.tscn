@@ -1,0 +1,312 @@
+[gd_scene format=3 uid="uid://c1dkn437wcwv"]
+
+[ext_resource type="Script" uid="uid://kra2ox6nkrxa" path="res://scenes/menu/menu.gd" id="1_e0arn"]
+[ext_resource type="Texture2D" uid="uid://bwsl1rc8t64bf" path="res://scenes/menu/menu.png" id="1_klgdb"]
+[ext_resource type="Texture2D" uid="uid://b2d5u13eyt2j2" path="res://addons/touch_screen_joystick/icon.png" id="2_y1o0p"]
+[ext_resource type="Script" uid="uid://bg0usnkj6rfu" path="res://scenes/menu/online.gd" id="3_037ec"]
+[ext_resource type="Script" uid="uid://lb4x2du3gp1y" path="res://scenes/menu/worlds.gd" id="4_037ec"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_037ec"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_y1o0p"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_r8yej"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_3y2rt"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_t0a87"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_qo0fc"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_k48pe"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_f2fum"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_kaijy"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_y4i35"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_rcuxh"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_64m6r"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_pjdsv"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_2j8sj"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_55a8x"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_rrod7"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_faisu"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_t2e6u"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_fb4qf"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_riv3r"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_037ec"]
+
+[sub_resource type="World3D" id="World3D_mcvr8"]
+
+[node name="Menu" type="Control" unique_id=1010724021]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_e0arn")
+
+[node name="Chat" type="Control" parent="." unique_id=1007787786]
+z_index = 2
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+mouse_filter = 2
+
+[node name="chatlog" type="TextEdit" parent="Chat" unique_id=1585196238]
+layout_mode = 0
+offset_left = 220.0
+offset_top = 23.0
+offset_right = 1112.0
+offset_bottom = 176.0
+editable = false
+virtual_keyboard_enabled = false
+
+[node name="chatinput" type="LineEdit" parent="Chat" unique_id=776006593]
+visible = false
+layout_mode = 0
+offset_left = 219.0
+offset_top = 196.0
+offset_right = 998.0
+offset_bottom = 260.0
+placeholder_text = "type your message"
+alignment = 1
+
+[node name="chat_send" type="Button" parent="Chat/chatinput" unique_id=100503144]
+layout_mode = 0
+offset_left = 802.0
+offset_right = 893.0
+offset_bottom = 64.0
+text = "send
+"
+
+[node name="TouchScreenButton" type="TouchScreenButton" parent="Chat/chatinput" unique_id=393578329]
+position = Vector2(831, 18)
+texture_normal = ExtResource("2_y1o0p")
+
+[node name="Title" type="Control" parent="." unique_id=1683849928]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+mouse_filter = 2
+
+[node name="titleimage" type="TextureRect" parent="Title" unique_id=949826302]
+layout_mode = 0
+offset_right = 1920.0
+offset_bottom = 1080.0
+texture = ExtResource("1_klgdb")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="host" type="Button" parent="Title" unique_id=1782212374]
+layout_mode = 0
+offset_left = 1053.0
+offset_top = 626.0
+offset_right = 1226.0
+offset_bottom = 802.0
+focus_mode = 0
+theme_override_styles/normal = SubResource("StyleBoxEmpty_037ec")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_y1o0p")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_r8yej")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_3y2rt")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_t0a87")
+text = "host"
+
+[node name="join" type="Button" parent="Title" unique_id=1650122498]
+layout_mode = 0
+offset_left = 1375.0
+offset_top = 720.0
+offset_right = 1738.0
+offset_bottom = 832.0
+tooltip_text = "join"
+focus_mode = 0
+theme_override_styles/normal = SubResource("StyleBoxEmpty_qo0fc")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_k48pe")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_f2fum")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_kaijy")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_y4i35")
+
+[node name="start" type="Button" parent="Title" unique_id=928742502]
+layout_mode = 0
+offset_left = 1053.0
+offset_top = 205.0
+offset_right = 1226.0
+offset_bottom = 381.0
+tooltip_text = "start game"
+focus_mode = 0
+theme_override_colors/font_color = Color(0.31380692, 0.59575015, 0.70154244, 1)
+theme_override_font_sizes/font_size = 43
+theme_override_styles/normal = SubResource("StyleBoxEmpty_rcuxh")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_64m6r")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_pjdsv")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_2j8sj")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_55a8x")
+text = "start"
+
+[node name="shutdown" type="Button" parent="Title" unique_id=432419435]
+layout_mode = 0
+offset_left = 264.0
+offset_top = 930.0
+offset_right = 356.0
+offset_bottom = 1027.0
+focus_mode = 0
+theme_override_styles/normal = SubResource("StyleBoxEmpty_rrod7")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_faisu")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_t2e6u")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_fb4qf")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_riv3r")
+
+[node name="leave" type="Button" parent="Title" unique_id=354435216]
+layout_mode = 0
+offset_left = 1397.0
+offset_top = 563.0
+offset_right = 1477.0
+offset_bottom = 594.0
+focus_mode = 0
+theme_override_styles/normal = SubResource("StyleBoxFlat_037ec")
+text = "leave"
+
+[node name="Online" type="Control" parent="." unique_id=1908988164]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+mouse_filter = 2
+script = ExtResource("3_037ec")
+
+[node name="game_options" type="VBoxContainer" parent="Online" unique_id=135994835]
+layout_mode = 0
+offset_left = 1261.0
+offset_top = 474.0
+offset_right = 1379.0
+offset_bottom = 594.0
+
+[node name="Label" type="Label" parent="Online/game_options" unique_id=1070984048]
+layout_mode = 2
+text = "level"
+
+[node name="lvlinput" type="OptionButton" parent="Online/game_options" unique_id=575403681]
+layout_mode = 2
+selected = 0
+item_count = 2
+popup/item_0/text = "world 0"
+popup/item_0/id = 0
+popup/item_1/text = "world 1"
+popup/item_1/id = 1
+
+[node name="Label2" type="Label" parent="Online/game_options" unique_id=1938293707]
+layout_mode = 2
+text = "ip address"
+
+[node name="ipinput" type="LineEdit" parent="Online/game_options" unique_id=1109333883]
+layout_mode = 2
+placeholder_text = "blank for host"
+
+[node name="game_options2" type="VBoxContainer" parent="Online" unique_id=2091423796]
+layout_mode = 0
+offset_left = 1397.0
+offset_top = 474.0
+offset_right = 1477.0
+offset_bottom = 583.0
+
+[node name="username" type="Label" parent="Online/game_options2" unique_id=443240675]
+layout_mode = 2
+text = "username"
+
+[node name="igninput" type="LineEdit" parent="Online/game_options2" unique_id=1024342574]
+layout_mode = 2
+placeholder_text = "dog"
+
+[node name="Label" type="Label" parent="Online/game_options2" unique_id=394682659]
+visible = false
+layout_mode = 2
+text = "level"
+
+[node name="OptionButton" type="OptionButton" parent="Online/game_options2" unique_id=619723384]
+visible = false
+layout_mode = 2
+
+[node name="Worlds" type="Control" parent="." unique_id=753523311]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("4_037ec")
+available_lvl = Array[String](["res://scenes/junk/world0.tscn", "res://scenes/junk/world1.tscn"])
+
+[node name="3D" type="Node" parent="Worlds" unique_id=768534125]
+
+[node name="svc0" type="SubViewportContainer" parent="Worlds/3D" unique_id=1217567391]
+visible = false
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="svp0" type="SubViewport" parent="Worlds/3D/svc0" unique_id=1859544880]
+own_world_3d = true
+world_3d = SubResource("World3D_mcvr8")
+handle_input_locally = false
+size = Vector2i(1920, 1080)
+render_target_update_mode = 0
+
+[node name="MultiplayerSpawner" type="MultiplayerSpawner" parent="Worlds/3D/svc0" unique_id=1742942010]
+spawn_path = NodePath("../svp0")
+
+[node name="svc1" type="SubViewportContainer" parent="Worlds/3D" unique_id=2071362040]
+visible = false
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="svp1" type="SubViewport" parent="Worlds/3D/svc1" unique_id=936768101]
+own_world_3d = true
+world_3d = SubResource("World3D_mcvr8")
+handle_input_locally = false
+size = Vector2i(1920, 1080)
+render_target_update_mode = 0
+
+[node name="MultiplayerSpawner" type="MultiplayerSpawner" parent="Worlds/3D/svc1" unique_id=516307257]
+spawn_path = NodePath("../svp1")
+
+[node name="2D" type="Node" parent="Worlds" unique_id=1051965127]
+
+[node name="svc0a" type="SubViewportContainer" parent="Worlds/2D" unique_id=1555696430]
+visible = false
+offset_right = 1600.0
+offset_bottom = 900.0
+
+[node name="svp0a" type="SubViewport" parent="Worlds/2D/svc0a" unique_id=1311798490]
+own_world_3d = true
+world_3d = SubResource("World3D_mcvr8")
+handle_input_locally = false
+size = Vector2i(1920, 1080)
+render_target_update_mode = 0
+
+[node name="MultiplayerSpawner" type="MultiplayerSpawner" parent="Worlds/2D/svc0a" unique_id=1008195675]
+spawn_path = NodePath("../svp0a")
+
+[node name="Music" type="AudioStreamPlayer" parent="." unique_id=1023910002]
+
+[node name="Settings" type="Control" parent="." unique_id=566163145]
+anchors_preset = 0
+offset_left = 1255.0
+offset_top = 507.0
+offset_right = 1295.0
+offset_bottom = 547.0
+
+[connection signal="pressed" from="Chat/chatinput/chat_send" to="Online" method="_on_chat_send_pressed"]
+[connection signal="pressed" from="Chat/chatinput/TouchScreenButton" to="Online" method="_on_touch_screen_button_pressed"]
+[connection signal="pressed" from="Title/host" to="Online" method="_on_host_pressed"]
+[connection signal="pressed" from="Title/join" to="Online" method="_on_join_pressed"]
+[connection signal="pressed" from="Title/start" to="Online" method="_on_start_pressed"]
+[connection signal="pressed" from="Title/leave" to="Online" method="_on_leave_pressed"]
+[connection signal="item_selected" from="Online/game_options/lvlinput" to="Online" method="_on_lvlinput_item_selected"]

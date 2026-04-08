@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://c1biomacbnb6u"
+path="res://.godot/imported/Yume 2kki OST - Bloom 99 (Extended).ogg-941b630eeb18ba61a76526f6455e2f1c.oggvorbisstr"
+
+[deps]
+
+source_file="res://music/legacy import/yume/Yume 2kki OST - Bloom 99 (Extended).ogg"
+dest_files=["res://.godot/imported/Yume 2kki OST - Bloom 99 (Extended).ogg-941b630eeb18ba61a76526f6455e2f1c.oggvorbisstr"]
+
+[params]
+
+loop=true
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

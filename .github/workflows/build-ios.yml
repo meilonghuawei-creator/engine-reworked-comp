@@ -1,0 +1,66 @@
+name: Build iOS (Godot 4.x)
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  build:
+    runs-on: macos-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v4
+
+    - name: Download Godot 4.x
+      run: |
+        # Adjust the URL if a specific 4.6 sub-version is released
+        wget https://github.com/godotengine/godot/releases/download/4.6-stable/Godot_v4.6-stable_macos.universal.zip
+        unzip Godot_v4.6-stable_macos.universal.zip
+        sudo mv Godot.app /Applications/Godot.app
+        # In Godot 4, the binary is inside Contents/MacOS/Godot
+        sudo ln -s /Applications/Godot.app/Contents/MacOS/Godot /usr/local/bin/godot
+
+    - name: Setup Godot Export Templates
+      run: |
+        # Godot 4 uses 'editor_data' or standard paths. On macOS Actions:
+        mkdir -p ~/Library/Application\ Support/Godot/export_templates/4.6.stable
+        wget https://github.com/godotengine/godot/releases/download/4.6-stable/Godot_v4.6-stable_export_templates.tpz
+        # Use unzip for .tpz (which is just a renamed zip)
+        unzip Godot_v4.6-stable_export_templates.tpz -d temp_templates
+        mv temp_templates/templates/* ~/Library/Application\ Support/Godot/export_templates/4.6.stable/
+        rm -rf temp_templates Godot_v4.6-stable_export_templates.tpz
+
+    - name: Create Build Directory
+      run: mkdir -p build/ios
+
+    - name: Export Xcode Project
+      # Use --headless in Godot 4 instead of DISPLAY hacks
+      # Ensure you have an export preset named "iOS" in your project!
+      run: godot --headless --export-release "iOS" build/ios/your_project_name.xcodeproj
+
+    - name: Build Xcode Archive
+      run: |
+        xcodebuild archive \
+          -project build/ios/your_project_name.xcodeproj \
+          -scheme "your_project_name" \
+          -archivePath build/ios/your_project_name.xcarchive \
+          -configuration Release \
+          CODE_SIGNING_ALLOWED=NO \
+          CODE_SIGNING_REQUIRED=NO \
+          CODE_SIGN_IDENTITY=""
+
+    - name: Package IPA (Unsigned)
+      run: |
+        cd build/ios
+        mkdir -p Payload
+        cp -r your_project_name.xcarchive/Products/Applications/*.app Payload/
+        zip -r your_project_name.ipa Payload
+        
+    - name: Upload IPA Artifact
+      uses: actions/upload-artifact@v4
+      with:
+        name: iOS-Build-Unsigned
+        path: build/ios/your_project_name.ipa

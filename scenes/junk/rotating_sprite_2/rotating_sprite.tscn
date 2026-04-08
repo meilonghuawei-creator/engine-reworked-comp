@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://d2sk5n6tk4kvw"]
+
+[ext_resource type="Script" uid="uid://cqfc4w1tlmkvx" path="res://scenes/junk/rotating_sprite_2/rotating_sprite.gd" id="1_fx6ku"]
+[ext_resource type="Texture2D" uid="uid://4b2bganx3aqt" path="res://scenes/junk/rotating_sprite_2/IMG_6517.png" id="2_fx6ku"]
+
+[node name="Rotating_Sprite" type="Node3D" unique_id=1139349801]
+transform = Transform3D(0.9999997, 0, 0, 0, 1, 0, 0, 0, 0.9999997, 0, 0, 0)
+script = ExtResource("1_fx6ku")
+
+[node name="Rotate_y" type="Node3D" parent="." unique_id=1255183209]
+transform = Transform3D(1.0000002, 0, 0, 0, 1, 0, 0, 0, 1.0000002, 0, 0, 0)
+
+[node name="Rotate_x" type="Node3D" parent="Rotate_y" unique_id=462361711]
+transform = Transform3D(0.99999964, 0, 0, 0, 0.9999999, 0, 0, 0, 0.9999996, 0, 0, 0)
+
+[node name="Sprite3D" type="Sprite3D" parent="Rotate_y/Rotate_x" unique_id=1759433328]
+transform = Transform3D(0.07071068, 0, -0.070710674, 0, 0.09999999, 0, 0.07071068, 0, 0.070710674, 0, 0, 0)
+axis = 1
+alpha_cut = 2
+texture = ExtResource("2_fx6ku")

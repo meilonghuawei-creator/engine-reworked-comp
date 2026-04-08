@@ -1,0 +1,307 @@
+[gd_scene format=3 uid="uid://b1wdiyymjwak2"]
+
+[ext_resource type="Script" uid="uid://de8bbdkqof0cv" path="res://scenes/player/player_3d.gd" id="1_w63ml"]
+[ext_resource type="Texture2D" uid="uid://gn1a56m1pcv4" path="res://scenes/player/front.png" id="2_bkghi"]
+[ext_resource type="Texture2D" uid="uid://brfguxq56ytxd" path="res://scenes/player/side2.png" id="3_njxiw"]
+[ext_resource type="Texture2D" uid="uid://bs150a03l1o1y" path="res://scenes/player/back.png" id="4_7gs8k"]
+[ext_resource type="Texture2D" uid="uid://cutjhhkj2i74e" path="res://scenes/player/side1.png" id="5_ed1nw"]
+[ext_resource type="Script" uid="uid://bjy3i1d3jtg4i" path="res://scenes/player/camera_spring_arm.gd" id="6_njxiw"]
+[ext_resource type="Script" uid="uid://fp41emshatiy" path="res://addons/touch_screen_joystick/touch_screen_joystick.gd" id="7_7gs8k"]
+[ext_resource type="Texture2D" uid="uid://b2d5u13eyt2j2" path="res://addons/touch_screen_joystick/icon.png" id="8_ed1nw"]
+[ext_resource type="PackedScene" uid="uid://dmr0fcamx7t56" path="res://addons/virtual_joystick/virtual_joystick_scene.tscn" id="9_harcl"]
+[ext_resource type="Shader" uid="uid://0ajeuvyb2kfj" path="res://shaders/crtkinomotoyui.gdshader" id="10_vl62o"]
+[ext_resource type="Shader" uid="uid://d1iysui60igct" path="res://shaders/crtblitpxl.gdshader" id="11_t3cmh"]
+[ext_resource type="Shader" uid="uid://dtdg4lknqwpwm" path="res://shaders/crtc64cosmin.gdshader" id="12_8tj8l"]
+[ext_resource type="Shader" uid="uid://b4ixoylmiywe5" path="res://shaders/vhsrevybes.gdshader" id="13_t3cmh"]
+[ext_resource type="Shader" uid="uid://vdvpyvhwtfy6" path="res://shaders/fearsoffathomcube.gdshader" id="14_f65j0"]
+[ext_resource type="Shader" uid="uid://hpa47lp5kawi" path="res://shaders/snowlumine.gdshader" id="15_pixw5"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_vw6wi"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_bkghi"]
+transparency = 1
+albedo_color = Color(0.6683075, 0.14629453, 0.3110992, 0.16862746)
+
+[sub_resource type="BoxMesh" id="BoxMesh_w63ml"]
+material = SubResource("StandardMaterial3D_bkghi")
+
+[sub_resource type="TextMesh" id="TextMesh_njxiw"]
+text = "Left                            Right"
+
+[sub_resource type="BoxMesh" id="BoxMesh_7gs8k"]
+
+[sub_resource type="SceneReplicationConfig" id="SceneReplicationConfig_vw6wi"]
+properties/0/path = NodePath(".:position")
+properties/0/spawn = true
+properties/0/replication_mode = 1
+properties/1/path = NodePath(".:rotation")
+properties/1/spawn = true
+properties/1/replication_mode = 1
+properties/2/path = NodePath("player_cube:rotation")
+properties/2/spawn = true
+properties/2/replication_mode = 1
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_f65j0"]
+shader = ExtResource("10_vl62o")
+shader_parameter/crt_curve = 0.0
+shader_parameter/crt_scan_line_color = 0.347
+shader_parameter/aperture_grille_rate = 1.0
+shader_parameter/aparture_grille_cut_rate = 0.8090000384275
+shader_parameter/rf_switch_esque_blur = 1.0
+shader_parameter/white_noise_rate = 0.2050000097375
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_pixw5"]
+shader = ExtResource("11_t3cmh")
+shader_parameter/scanline_color = Color(0, 0, 0, 1)
+shader_parameter/flicker_color = Color(0, 0, 0, 1)
+shader_parameter/scanlines_count = 10.0
+shader_parameter/scanlines_intensity = 0.05
+shader_parameter/flicker_speed = 0.14
+shader_parameter/flicker_intensity = 0.014000000665
+shader_parameter/color_offset = 1.5
+shader_parameter/blur = 0.09
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_l4o1f"]
+shader = ExtResource("12_8tj8l")
+shader_parameter/resolution = Vector2(320, 180)
+shader_parameter/scan_line_amount = 0.30000001425
+shader_parameter/warp_amount = 0.1
+shader_parameter/noise_amount = 0.0470000022325
+shader_parameter/interference_amount = 0.2
+shader_parameter/grille_amount = 0.1
+shader_parameter/grille_size = 1.0
+shader_parameter/vignette_amount = 0.6
+shader_parameter/vignette_intensity = 0.4
+shader_parameter/aberation_amount = 0.5
+shader_parameter/roll_line_amount = 0.0070000003325
+shader_parameter/roll_speed = 1.0
+shader_parameter/scan_line_strength = -8.0
+shader_parameter/pixel_strength = -3.6089999814275
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_t3cmh"]
+shader = ExtResource("13_t3cmh")
+shader_parameter/shake = 0.0010000000475
+shader_parameter/noiseQuality = 250.0
+shader_parameter/noiseIntensity = 0.001
+shader_parameter/offsetIntensity = 0.0045
+shader_parameter/colorOffsetIntensity = 0.2
+shader_parameter/pixelSize = 400.0000189525
+shader_parameter/grainIntensity = 0.04
+shader_parameter/use_overlay = true
+shader_parameter/use_lens_distortion = true
+shader_parameter/overlay_color = Color(1, 1, 1, 10)
+shader_parameter/lens_distortion_strength = 0.0050000002375
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_s6q6v"]
+shader = ExtResource("14_f65j0")
+shader_parameter/aberration_strength = 3.0
+shader_parameter/blur_strength = 2.0
+shader_parameter/noise_strength = 0.048
+shader_parameter/vignette_strength = 0.78
+shader_parameter/scanline_strength = 0.016
+shader_parameter/distortion_strength = 0.0010000000475
+shader_parameter/ghost_strength = 0.0010000000475
+shader_parameter/flicker_strength = 0.0010000000475
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_blo27"]
+shader = ExtResource("15_pixw5")
+shader_parameter/spread = 0.5
+shader_parameter/size = 0.5
+shader_parameter/snow_color = Color(1, 1, 1, 1)
+shader_parameter/snow_transparency = 0.2
+shader_parameter/speed = 0.5
+shader_parameter/wind = 0.0
+shader_parameter/num_of_layers = 40
+
+[node name="Player3D" type="CharacterBody3D" unique_id=1104363255 node_paths=PackedStringArray("shaders") groups=["Player_Group"]]
+script = ExtResource("1_w63ml")
+shaders = [NodePath("shader1"), NodePath("shader2"), NodePath("shader3"), NodePath("shader4"), NodePath("shader5"), NodePath("shader6")]
+front_texture = ExtResource("2_bkghi")
+left_texture = ExtResource("3_njxiw")
+back_texture = ExtResource("4_7gs8k")
+right_texture = ExtResource("5_ed1nw")
+
+[node name="Mobile" type="Control" parent="." unique_id=394734819]
+visible = false
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="TouchScreenJoystick" type="Control" parent="Mobile" unique_id=1829887388]
+visible = false
+anchors_preset = 0
+offset_left = 204.00002
+offset_top = 840.0
+offset_right = 244.00002
+offset_bottom = 880.0
+scale = Vector2(1.5199994, 1.5199994)
+script = ExtResource("7_7gs8k")
+color = Color(1, 1, 1, 0.2)
+back_color = Color(0.427493, 0.42749307, 0.42749307, 0.5019608)
+use_input_actions = true
+action_left = &"left"
+action_right = &"right"
+action_up = &"forward"
+action_down = &"backward"
+metadata/_custom_type_script = "uid://fp41emshatiy"
+
+[node name="v" type="TouchScreenButton" parent="Mobile" unique_id=409417559]
+position = Vector2(1252, 903)
+scale = Vector2(4.4, 4.4)
+texture_normal = ExtResource("8_ed1nw")
+action = "toggle_camera"
+visibility_mode = 1
+
+[node name="j" type="TouchScreenButton" parent="Mobile" unique_id=410880221]
+position = Vector2(1433, 901)
+scale = Vector2(4.4, 4.4)
+texture_normal = ExtResource("8_ed1nw")
+action = "jump"
+visibility_mode = 1
+
+[node name="e" type="TouchScreenButton" parent="Mobile" unique_id=1709094724]
+position = Vector2(1618, 901)
+scale = Vector2(4.4, 4.4)
+texture_normal = ExtResource("8_ed1nw")
+action = "interact"
+visibility_mode = 1
+
+[node name="chat" type="TouchScreenButton" parent="Mobile" unique_id=1584618952]
+position = Vector2(40, 40)
+scale = Vector2(2.080001, 2.080001)
+texture_normal = ExtResource("8_ed1nw")
+action = "chat"
+visibility_mode = 1
+
+[node name="Virtual Joystick" parent="Mobile" unique_id=1670940569 instance=ExtResource("9_harcl")]
+layout_mode = 1
+offset_left = -30.0
+offset_top = 564.0
+offset_right = 270.0
+offset_bottom = 864.0
+scale = Vector2(1.7518194, 1.7518194)
+action_left = "left"
+action_right = "right"
+action_up = "forward"
+action_down = "backward"
+
+[node name="Timer" type="Timer" parent="." unique_id=1223035954]
+wait_time = 0.1
+one_shot = true
+autostart = true
+
+[node name="Camera3D" type="Camera3D" parent="." unique_id=1057154190]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5157813, -0.4784977)
+
+[node name="RayCast3D" type="RayCast3D" parent="Camera3D" unique_id=433897684]
+
+[node name="SpringArm3D" type="SpringArm3D" parent="." unique_id=1626494861]
+spring_length = 6.0
+script = ExtResource("6_njxiw")
+min_vertical_angle = -1.5533430342749532
+max_vertical_angle = 0.7853981633974483
+
+[node name="ThirdPersonCamera" type="Camera3D" parent="SpringArm3D" unique_id=1002434316]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.8050344, -0.4784977)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1392059325]
+shape = SubResource("CapsuleShape3D_vw6wi")
+
+[node name="Sprite3D" type="Sprite3D" parent="." unique_id=2045422703]
+pixel_size = 0.002
+billboard = 1
+shaded = true
+alpha_cut = 2
+texture = ExtResource("2_bkghi")
+
+[node name="AudioListener3D" type="AudioListener3D" parent="." unique_id=952747866]
+
+[node name="player_cube" type="MeshInstance3D" parent="." unique_id=1601722933]
+visible = false
+mesh = SubResource("BoxMesh_w63ml")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="player_cube" unique_id=668538807]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.001270771, 0, 0)
+mesh = SubResource("TextMesh_njxiw")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="player_cube" unique_id=346330112]
+transform = Transform3D(0.094720155, 0, 0, 0, 0.10192317, 0, 0, 0, 0.54538786, -0.5703815, -0.20397508, 0.07560468)
+mesh = SubResource("BoxMesh_7gs8k")
+
+[node name="MultiplayerSynchronizer" type="MultiplayerSynchronizer" parent="." unique_id=2075994770]
+replication_config = SubResource("SceneReplicationConfig_vw6wi")
+
+[node name="Hotbar" type="ItemList" parent="." unique_id=27979283]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -20.0
+offset_top = -40.0
+offset_right = 20.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="shader1" type="ColorRect" parent="." unique_id=1878752429]
+visible = false
+material = SubResource("ShaderMaterial_f65j0")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="shader2" type="ColorRect" parent="." unique_id=1859657090]
+visible = false
+material = SubResource("ShaderMaterial_pixw5")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="shader3" type="ColorRect" parent="." unique_id=282876760]
+visible = false
+material = SubResource("ShaderMaterial_l4o1f")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+
+[node name="shader4" type="ColorRect" parent="." unique_id=810837119]
+visible = false
+material = SubResource("ShaderMaterial_t3cmh")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="shader5" type="ColorRect" parent="." unique_id=302669861]
+visible = false
+material = SubResource("ShaderMaterial_s6q6v")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="shader6" type="ColorRect" parent="." unique_id=735777513]
+visible = false
+material = SubResource("ShaderMaterial_blo27")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
